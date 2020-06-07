@@ -39,10 +39,19 @@ export default class Dashboard extends React.Component {
                     <div>{this.state.teacher_courses[index]}</div>
                     {item.map(item => { return (<NavLink to={"/StudentLessons/" + item._id + "/" + this.state.teacher_courses[index]}>{item.fullname}</NavLink>) })}
                 </div>
-            )}
+            )
+        }
         )
     }
 
+    renderPreparePanel() {
+        return this.state.teacher_courses.map(item => {
+            return (
+            <div>
+                <NavLink to={"/Prepare"+"/"+item}>{item}</NavLink>
+            </div>
+        )})
+    }
     render() {
         if (this.state.data_loaded) {
             console.log(this.state.student_data)
@@ -52,6 +61,10 @@ export default class Dashboard extends React.Component {
                     <h1>Home</h1>
                     <div>{this.render_students()} </div>
                     <p>Home page body content</p>
+                    <div>Add Students</div>
+                    <div>Prepare</div>
+                    <div>{this.renderPreparePanel()}</div>
+                    <div></div>
                 </div>
             );
         }

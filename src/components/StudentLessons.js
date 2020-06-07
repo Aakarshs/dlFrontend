@@ -22,11 +22,11 @@ export default class StudentLessons extends React.Component {
     }
 
     renderStudentLessons() {
-        if (this.state.student_data != 0) {
+        if (this.state.student_data != "0") {
             return (
                 this.state.student_data.lesson_details.map(item => {
                     return ( 
-                        <NavLink to={"/LessonDetails/" + item.student_exercises_reference }>{item.lesson_name}</NavLink>
+                        <NavLink to={"/LessonDetails/" + item.student_exercises_reference + "/" + item.original_lesson_reference + "/" + this.state.course_id }>{item.lesson_name}</NavLink>
                     )
                 })
             )}
@@ -38,7 +38,9 @@ export default class StudentLessons extends React.Component {
 
     render() {
         if (this.state.data_loaded) {
+            console.log("=======")
             console.log(this.state.student_data)
+            console.log("=======")
             return (
                 <div>
                     <div>Lessons</div>
