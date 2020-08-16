@@ -12,6 +12,7 @@ export default class StudentDetails extends React.Component {
          student_data: "",
          data_loaded: false,
          student_id: props.match.params.student_id,
+         teacher_id: props.match.params.teacher_id,
          course_id: "",
          toExercises: false,
          lesson_reference: "",
@@ -79,7 +80,7 @@ export default class StudentDetails extends React.Component {
    render() {
       console.log(this.state.student_data)
       if (this.state.toExercises) {
-         var redirectLink = '/StudentsExercise/' + this.state.course_id + "/" + this.state.original_lesson_reference + "/" + this.state.exercise_reference + "/" + this.state.student_id
+         var redirectLink = '/StudentGrading/' + this.state.course_id + "/" + this.state.original_lesson_reference + "/" + this.state.exercise_reference + "/" + this.state.student_id + "/" + this.state.teacher_id
          return <Redirect to={redirectLink} />
       }
       if (this.state.data_loaded) {
@@ -88,7 +89,7 @@ export default class StudentDetails extends React.Component {
 
                {/* ---- Nav Panel ---- */}
                <div className={'nav-panel'}>
-                  <NavLink className={'nav-button'} to={"/"}>Logout</NavLink>
+                  <NavLink className={'nav-button'} to={"/Dashboard/" + this.state.teacher_id}>Home</NavLink>
                   <div className={'nav-button'}> Q & A </div>
                </div>
                {/* ---------------- */}
@@ -113,95 +114,3 @@ export default class StudentDetails extends React.Component {
 }
 
 
-
-/*
-import React from 'react';
-import { get_lesson_by_reference, get_student_lesson_by_reference, get_student_fullname } from "./Apis";
-import { NavLink } from 'react-router-dom';
-import { Redirect } from "react-router-dom";
-import '../styles/Students.css';
-
-
-export default class Students extends React.Component {
-   constructor(props) {
-      super(props);
-
-      this.state = {
-         student_data: "",
-         data_loaded: false,
-         student_id: '5f19f9c3f09334f640a30e7a',
-         course_id: "",
-         toExercises: false,
-         lesson_reference: "",
-         student_exercises_reference: "",
-         original_lesson_reference: "",
-         teacher_id: "",
-         student_name: ""
-      };
-   }
-
-   componentWillMount(props) {
-      get_student_fullname(this.state.student_id).then(data => {
-         this.setState({ student_name: data })
-      })
-      get_lesson_by_reference(this.state.student_id)
-         .then(data => {
-            this.setState({ student_data: data, data_loaded: true, teacher_id: data[0].teacher_id })
-         })
-   }
-
-   findStudentLessonIdBy(original_lesson_reference, course_id) {
-      get_student_lesson_by_reference(this.state.student_id, original_lesson_reference).then(data => {
-         this.setState({ lesson_reference: data[0], exercise_reference: data[1], toExercises: true, course_id: course_id, original_lesson_reference: original_lesson_reference })
-      })
-   }
-
-   renderCourseDetailsNew() {
-      return (this.state.student_data.map((item, index) => {
-         return (<div>
-            {item.course_id}
-            {item.lesson_data.map((item) => {
-               if (!item.access_rights.includes(this.state.teacher_id)) {
-                  return (
-                     <div className="course-title-available">
-                        <div>Not accessible</div>
-                        <div>{item.lesson_title} </div>
-                     </div>)
-               }
-               else {
-                  return (
-                     <div  className="course-title-unavailable" onClick={() => { this.findStudentLessonIdBy(item.lesson_id, this.state.student_data[index].course_id) }}>
-                        {item.lesson_title} 
-                        <div>{item.status}</div>
-
-                        </div>
-                  )}})}
-         </div>
-         )}))
-   }
-
-
-   render() {
-      console.log(this.state.student_data)
-      if (this.state.toExercises) {
-         var redirectLink = '/StudentsExercise/' + this.state.course_id + "/" + this.state.original_lesson_reference + "/" + this.state.exercise_reference + "/" + this.state.student_id
-         return <Redirect to={redirectLink} />
-      }
-      if (this.state.data_loaded) {
-         return (
-            <div>
-               <div>Welcome {this.state.student_name}</div>
-               {this.renderCourseDetailsNew()}
-            </div>
-         );
-      }
-      else {
-         return (
-            <div>loading</div>
-         )
-      }
-   }
-}
-
-
-*/

@@ -1,0 +1,74 @@
+.lesson-button-container{
+    display:flex;
+    flex-direction: row;
+}
+
+.prepare-background {
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4f4da0+0,a8a2d0+100 */
+    background: #4f4da0;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #4f4da0 0%, #a8a2d0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f4da0', endColorstr='#a8a2d0', GradientType=1);
+    /* IE6-9 */
+    top: 0;
+    z-index: -1;
+  }
+  
+.prepare-lesson-title{
+    color: #4f4da0;
+font-size: 20px;
+font-weight: bolder;
+margin-bottom:10px
+}
+
+.lesson-button{
+ padding:10px;
+ margin:5px;
+ border-radius: 10px;
+ background: #90c790;
+
+}
+
+.prepare-title{
+    font-size: 30px;
+    margin:30px;
+    font-weight: bolder;
+    color:white
+    }
+
+.lesson-button:hover{
+    background-color: rgb(53, 112, 112);
+transition: 0.5s;
+cursor: pointer;
+}
+
+.lesson{
+    background-color: white;
+    width:300px;
+    margin:10px;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 77px 1px rgba(0, 0, 0, 0.14);
+
+}
+
+.all-lesson-prepare{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.access-right-notifier{
+    background-color: rgb(216, 216, 216);
+    padding:10px;
+    margin:5px;
+    border-radius: 10px;
+}

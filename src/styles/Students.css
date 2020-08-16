@@ -1,0 +1,17 @@
+.header{
+
+}
+
+.course-title-available{
+    background-color: aqua;
+    margin: 10px;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.course-title-unavailable{
+  background-color: rgb(129, 129, 129);
+  margin: 10px;
+  padding:5px;
+    border-radius: 5px;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { authenticate_student } from "./Apis";
+import { authenticate_teacher, authenticate_student } from "./Apis";
 import { NavLink } from 'react-router-dom';
 import { Redirect } from "react-router-dom";
+import '../styles/TeacherLogin.css';
 
 
 export default class StudentLogin extends React.Component {
@@ -11,7 +12,8 @@ export default class StudentLogin extends React.Component {
         this.state = {
             email: "",
             password: "",
-            toDashboard: false 
+            toDashboard: false,
+            student_id:""
         };
     }
 
@@ -30,7 +32,7 @@ export default class StudentLogin extends React.Component {
     authenticate() {
         authenticate_student(this.state.email, this.state.password).then((data) => {
             if (data != "0") {
-                this.setState(() => ({ toDashboard: true }))
+                this.setState(() => ({ toDashboard: true, student_id: data }))
             }
             else {
                 alert("incorrect username and password")
@@ -40,15 +42,25 @@ export default class StudentLogin extends React.Component {
 
     render() {
         if (this.state.toDashboard) {
-            return <Redirect to='/Students/' />
-          }
+            return <Redirect to={'/Students/' + this.state.student_id} />
+        }
         return (
             <div>
-                <div>Email</div>
-                <textarea onChange={e => { this.handleChangeEmail(e.target.value) }} value={this.state.email}></textarea>
-                <div value={this.state.password}>Password</div>
-                <textarea onChange={e => { this.handleChangePassword(e.target.value) }} value={this.state.password}></textarea>
-                <button onClick={() => this.authenticate()}>Login</button>
+                <div className="login-container">
+                    <div className="inner-container-login">
+                        <div className="inner-container-elements">
+                            <div className="text-description">
+                                <div className="company-name">Digital Leaders</div>
+                                <div>Welcome back, Sign in to your account.</div>
+                            </div>
+                            <textarea rows="1" className="login-textarea" placeholder="Email" onChange={e => { this.handleChangeEmail(e.target.value) }} value={this.state.email}></textarea>
+                            <textarea rows="1" className="login-textarea" placeholder="Password" onChange={e => { this.handleChangePassword(e.target.value) }} value={this.state.password}></textarea>
+                            <button className="login-button" onClick={() => this.authenticate()}>Login</button>
+                        </div>
+                    </div>
+                    <div className="login-artwork"></div>
+                </div>
+
             </div>
         );
     }

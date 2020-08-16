@@ -2,7 +2,7 @@ import React from 'react';
 import { authenticate_teacher } from "./Apis";
 import { NavLink } from 'react-router-dom';
 import { Redirect } from "react-router-dom";
-
+import '../styles/Home.css';
 
 export default class TeacherLogin extends React.Component {
     constructor(props) {
@@ -15,9 +15,6 @@ export default class TeacherLogin extends React.Component {
         };
     }
 
-    componentWillMount(props) {
-
-    }
     handleChangeEmail(e) {
         this.setState({ email: e })
 
@@ -39,13 +36,17 @@ export default class TeacherLogin extends React.Component {
     }
 
     render() {
-        if (this.state.toDashboard) {
-            return <Redirect to='/Dashboard' />
-        }
+        if (this.state.toDashboard) { return <Redirect to='/Dashboard' /> }
         return (
             <div>
-                <NavLink to={"/StudentLogin/"}>Student Login</NavLink>
-                <NavLink to={"/TeacherLogin/"}>Teacher Login</NavLink>
+                <div className={'home-background'}></div>
+            <div className="home-outer-container">
+                <div className={'home-main-title'}>Digital Leaders</div>
+                <div className="home-container">
+                    <NavLink className="login-card" to={"/TeacherLogin/"}><div className="card-text">Teacher Login</div></NavLink>
+                    <NavLink className="login-card" to={"/StudentLogin/"}><div className="card-text">Student Login</div></NavLink>
+                </div>
+            </div>
             </div>
         );
     }

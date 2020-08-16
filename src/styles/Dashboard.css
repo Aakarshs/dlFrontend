@@ -1,0 +1,305 @@
+.background {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4f4da0+0,a8a2d0+100 */
+  background: #4f4da0;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #4f4da0 0%, #a8a2d0 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f4da0', endColorstr='#a8a2d0', GradientType=1);
+  /* IE6-9 */
+  top: 0;
+  z-index: -1;
+}
+
+.inner-container {
+  margin-left: 40px;
+}
+
+
+.dash-nav-panel{
+  position: absolute;
+  right:10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.dash-nav-button{
+  background-color: #f4f6fb23;
+  padding:20px;
+  width:100px;
+  border-radius: 20px;
+  color:white;
+  font-weight: bolder;
+  margin:10px;
+  z-index: 99;
+  text-decoration: none;
+}
+
+.dash-nav-button:hover {
+  background-color: #f4f6fb7a;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.course-name-dash {
+  color: #5250A2;
+  font-size: 30px;
+  margin: 10px;
+  font-weight: bolder;
+}
+
+.dash-headings{
+  margin-left:20px;
+  color:white;
+  margin-top:40px;
+}
+
+.dash-main-heading{
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.dash-sub-heading{
+  font-weight: bolder;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.dashboard-outer-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 400px;
+  margin: 20px;
+  height: 500px;
+  border-radius: 2px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 10px 77px 1px rgba(0, 0, 0, 0.14);
+}
+
+.dashboard-inner-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard-student-name {
+  background-color: #E8E5F2;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4f4da0;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.dashboard-student-name-graded {
+  background-color: rgb(143, 216, 83);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4f4da0;
+  text-decoration: none;
+  flex-direction: column;
+  font-weight: bolder;
+}
+
+.dash-graded-tag{
+  padding:5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgba(0, 0, 0, 0.205);
+  margin:5px;
+  color:white;
+  border-radius: 10px;
+}
+
+.dashboard-student-name:hover {
+  background-color: rgb(143, 216, 83);
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+
+.dash-sub-content-heading{
+  margin-left:10px;
+  margin-top: 20px;;
+  font-weight: bolder;
+  color: #4f4da0;
+  font-size: 20px;
+}
+
+.prepare-panel-courses{
+  padding:5px;
+  background-color: whitesmoke;
+  margin:10px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.prepare-panel-courses:hover{
+  background-color: rgb(139, 139, 139);
+color:white;
+transition: 0.5s;
+cursor: pointer;
+}
+
+.all-student-list-students {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #E8E5F2;
+  width: 100px;
+  margin: 10px;
+}
+
+.all-student-list-students:hover {
+  background-color: rgb(143, 216, 83);
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+
+.student-list-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-students-button {
+  padding: 20px;
+  background-color: burlywood;
+  border-radius: 10px;
+  width: 100px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  color:white;
+  text-align: center;
+}
+
+.add-students-button:hover{
+  background-color: rgb(218, 132, 21);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.other-actions-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.prepare-for-course-container {
+  padding: 20px;
+  background-color: rgb(145, 219, 207);
+  border-radius: 10px;
+  width: 250px;
+  margin: 5px;
+  color: white;
+}
+
+.add-student-modal {
+  background-color: white;
+  height: 500px;
+  width: 500px;
+  box-shadow: 0px 100px 77px 1px rgba(0, 0, 0, 0.14);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cancel-button {
+  padding: 20px;
+  background-color: #dbdaff;
+  border-radius: 10px;
+}
+
+.cancel-button:hover {
+  background-color: #7e7bda;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.add-student-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-description{
+  margin:10px;
+  margin-top:20px;
+  font-weight: bolder;
+}
+
+.modal-textarea-container{
+  margin:10px;
+}
+
+.modal-textarea-description{
+  font-weight: bolder;
+  margin:5px;
+  color:  #7e7bda;;
+}
+
+.modal-textarea{
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
+  box-shadow: 0px 10px 77px 1px rgba(0, 0, 0, 0.24);
+  border-width: 0;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.add-student-button{
+  padding:10px;
+  margin-top:25px;
+  font-weight: bolder;
+  color:white;
+  background-color:  #7e7bda;
+  border-radius: 10px;
+}
+
+.add-student-button:hover{
+  background-color:  #1b15d1;
+  transition: 0.5s;
+  cursor: pointer;
+}

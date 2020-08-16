@@ -1,0 +1,68 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-outer-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4f4da0+0,a8a2d0+100 */
+    background: #4f4da0;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #4f4da0 0%, #a8a2d0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #4f4da0 0%, #a8a2d0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f4da0', endColorstr='#a8a2d0', GradientType=1);
+    /* IE6-9 */
+    top: 0;
+    z-index: -1;
+}
+
+.home-main-title {
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 20px;
+    color: white;
+}
+
+.login-card {
+    background-color: white;
+    height: 150px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 77px 1px rgba(0, 0, 0, 0.14);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.login-card:hover {
+    cursor: pointer;
+    background-color: #4f4da0;
+    transition: 0.5s;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.card-text {
+    text-decoration: none;
+    font-size: 30px;
+}
