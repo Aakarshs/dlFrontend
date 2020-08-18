@@ -54,7 +54,7 @@ export const get_student_details_by_course = (student_id, course_id) => {
     });
 }
 
-export const get_teacher_courses = () => {
+export const get_teacher_courses = (teacher_id) => {
   return axios
     .get(backendUrl + "/get_teacher_courses/" + teacher_id)
     .then(response => {
