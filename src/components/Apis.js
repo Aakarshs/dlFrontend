@@ -1,9 +1,7 @@
 import axios from "axios";
 
-var backendUrl = "http://127.0.0.1:5000";
-var teacher_id = "5ebc8992a3f643f9ea3a68f2"
-
-
+var backendUrl = "https://digitalleaders-backend.herokuapp.com";
+//var teacher_id = "5ebc8992a3f643f9ea3a68f2"
 
 export const get_student_fullname = (student_id) => {
   return axios
